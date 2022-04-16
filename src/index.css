@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,500&family=Roboto+Slab&display=swap');
 
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+
+body {
+    width: 600px;
+}
 header>h1 {
     font-family: "Roboto Slab", sans-serif;
     text-align: center;
@@ -18,6 +27,11 @@ header>h1 {
     text-align: center;
 }
 
+.responsive {
+    width: auto;
+    height: auto;
+}
+
 .btnDrag {
     border-radius: 50%;
     border: none;
@@ -29,35 +43,35 @@ header>h1 {
 #black {
     position: absolute;
     top: 90%;
-    left: 70%;
+    left: 90%;
     transform: translate(-90%, -90%);
 }
 
 #black1 {
     position: absolute;
     top: 90%;
-    left:62%;
+    left:73%;
     transform: translate(-90%, -90%);
 }
 
 #green {
     position: absolute;
     top: 90%;
-    left: 53%;
+    left: 55%;
     transform: translate(-90%, -90%);
 }
 
 #red {
     position: absolute;
     top: 90%;
-    left: 45%;
+    left: 35%;
     transform: translate(-90%, -90%);
 }
 
 #blue {
     position: absolute;
     top: 90%;
-    left: 35%;
+    left: 15%;
     transform: translate(-90%, -90%);
 }
 
