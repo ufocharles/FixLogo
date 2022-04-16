@@ -104,32 +104,45 @@ function mouseRelease(e, dragBtn) {
 const resetButton = document.getElementById("reset")
 resetButton.addEventListener('click', () => {
     console.log('reset me')
-
-    dragBtns.forEach((dragBtn) => {
-        switch (dragBtn.id) {
-            case 'black':
-                dragBtn.style.top = "90%";
-                dragBtn.style.left = "90%";
-                break
-            case 'black1':
-                dragBtn.style.top = "90%";
-                dragBtn.style.left = "73%";
-                break
-            case 'blue':
-                dragBtn.style.top = "90%";
-                dragBtn.style.left = "15%";
-                break
-            case 'green':
-                dragBtn.style.top = "90%";
-                dragBtn.style.left = "55%";
-                break
-            case 'red':
-                dragBtn.style.top = "90%";
-                dragBtn.style.left = "35%";
-                break
-            default:
-                break;
-        }
-    });
+    location.reload()
+    // dragBtns.forEach((dragBtn) => {
+    //     switch (dragBtn.id) {
+    //         case 'black':
+    //             dragBtn.style.top = "90%";
+    //             dragBtn.style.left = "90%";
+    //             break
+    //         case 'black1':
+    //             dragBtn.style.top = "90%";
+    //             dragBtn.style.left = "73%";
+    //             break
+    //         case 'blue':
+    //             dragBtn.style.top = "90%";
+    //             dragBtn.style.left = "15%";
+    //             break
+    //         case 'green':
+    //             dragBtn.style.top = "90%";
+    //             dragBtn.style.left = "55%";
+    //             break
+    //         case 'red':
+    //             dragBtn.style.top = "90%";
+    //             dragBtn.style.left = "35%";
+    //             break
+    //         default:
+    //             break;
+    //     }
+    // });
 });
 
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
