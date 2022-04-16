@@ -135,14 +135,55 @@ resetButton.addEventListener('click', () => {
 
 function allowDrop(ev) {
     ev.preventDefault();
-  }
-  
-  function drag(ev) {
+}
+
+function drag(ev) {
+    console.log({ ev })
     ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
+}
+
+function drop(ev) {
+    console.log({ ev })
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
+    console.log(data)
+    switch (data) {
+        case 'black':
+            if (ev.target.id === 'blackDiv') {
+                ev.target.appendChild(document.getElementById(data));
+            } else {
+                null
+            }
+            break
+        case 'black1':
+            if (ev.target.id === 'black1Div') {
+                ev.target.appendChild(document.getElementById(data));
+            } else {
+                null
+            }
+            break
+        case 'blue':
+            if (ev.target.id === 'blueDiv') {
+                ev.target.appendChild(document.getElementById(data));
+            } else {
+                null
+            }
+            break
+        case 'green':
+            if (ev.target.id === 'greenDiv') {
+                ev.target.appendChild(document.getElementById(data));
+            } else {
+                null
+            }
+            break
+        case 'red':
+            if (ev.target.id === 'redDiv') {
+                ev.target.appendChild(document.getElementById(data));
+            } else {
+                null
+            }
+            break
+        default:
+            break;
+    }
+}
