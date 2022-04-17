@@ -4,7 +4,6 @@ let dotCoord = []
 // get reset button
 const resetButton = document.getElementById("reset")
 resetButton.addEventListener('click', () => {
-    console.log('reset me')
     location.reload()
 });
 
@@ -12,11 +11,12 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+// drag the dot
 function drag(ev) {
-    console.log({ ev })
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+// drop the dot in a div and check if its the right div
 function drop(ev) {
     console.log({ ev })
     ev.preventDefault();
@@ -62,8 +62,6 @@ function drop(ev) {
             break
         case 'black1':
             const blackExist = checkDotExist('black')
-            console.log({ blackExist })
-
             if (!blackExist) {
                 if (ev.target.id === 'blackDiv' || ev.target.id === 'black1Div') {
                     ev.target.appendChild(document.getElementById(data));
@@ -138,12 +136,15 @@ function checkDotExist(color) {
     }
 }
 
-// check is all dats are placed correctly
+// check all dots are placed correctly before congrats
 function completeLogo() {
-    console.log('im confetti')
     if (dotCoord.length === 5) {
         const congratDiv = document.getElementById('dotComplete')
         congratDiv.style.display = "block"
         confetti.start()
+
+        setTimeout(() => {
+            confetti.stop()
+        }, 5000)
     }
 }
