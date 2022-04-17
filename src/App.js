@@ -61,6 +61,7 @@ function drop(ev) {
             }
             break
         case 'black1':
+            // check if black exist already in the 2 black divs
             const blackExist = checkDotExist('black')
             if (!blackExist) {
                 if (ev.target.id === 'blackDiv' || ev.target.id === 'black1Div') {
@@ -72,6 +73,7 @@ function drop(ev) {
                     completeLogo()
                 }
             } else {
+                // figure out the other black spot available
                 const currentBlack = dotCoord.find(dot => { return dot.dotName === 'black' })
                 if (currentBlack.dotDiv === 'black1Div') {
                     if (ev.target.id === 'blackDiv') {
