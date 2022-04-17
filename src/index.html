@@ -13,13 +13,6 @@
     <header>
         <h1>Fix Inspiring App Logo</h1>
     </header>
-    <!-- <div class="btnDiv">
-        <button id="black" type="button" class="btnDrag"><img src="./images/ia-logo-dot-black.png" /></button>
-        <button id="black1" type="button" class="btnDrag"><img src="./images/ia-logo-dot-black.png" /></button>
-        <button id="blue" type="button" class="btnDrag"><img src="./images/ia-logo-dot-blue.png" /></button>
-        <button id="green" type="button" class="btnDrag"><img src="./images/ia-logo-dot-green.png" /></button>
-        <button id="red" type="button" class="btnDrag"><img src="./images/ia-logo-dot-red.png" /></button>
-    </div> -->
     <div class="dotList">
        <img src="./images/ia-logo-dot-blue.png" id="blue" draggable="true" ondragstart="drag(event)" />
         <img src="./images/ia-logo-dot-red.png" id="red" draggable="true" ondragstart="drag(event)" />
@@ -39,8 +32,15 @@
     <div class="reset">
         <button id="reset" class="resetBtn">Reset Dots</button>
     </div>
+    <div id="dotComplete" class="divComplete">CONGRATULATIONS!!! 👏👏👏</div>
 
+
+    <script type="text/javascript" src="confetti.js"></script>
     <script type="text/javascript" src="App.js"></script>
+    <script>
+        const congratDiv = document.getElementById('dotComplete')
+        congratDiv.style.display = "none"
+    </script>
 </body>
 
 </html>

@@ -26,9 +26,11 @@ header>h1 {
 .dotList {
     text-align: center;
 }
+
 img {
     margin: auto 10px;
 }
+
 .logo {
     margin-top: 20px;
     text-align: center;
@@ -50,6 +52,7 @@ img {
     top: 175px;
     left: 33px;
 }
+
 #black1Div {
     position: absolute;
     border-radius: 50%;
@@ -58,6 +61,7 @@ img {
     top: 270px;
     left: 405px;
 }
+
 #redDiv {
     position: absolute;
     border-radius: 50%;
@@ -66,6 +70,7 @@ img {
     top: 55px;
     left: 440px;
 }
+
 #blueDiv {
     position: absolute;
     border-radius: 50%;
@@ -74,6 +79,7 @@ img {
     top: 35px;
     left: 260px;
 }
+
 #greenDiv {
     position: absolute;
     border-radius: 50%;
@@ -96,40 +102,6 @@ img {
     outline: none;
 }
 
-/* #black {
-    position: absolute;
-    top: 90%;
-    left: 90%;
-    transform: translate(-90%, -90%);
-}
-
-#black1 {
-    position: absolute;
-    top: 90%;
-    left: 73%;
-    transform: translate(-90%, -90%);
-}
-
-#green {
-    position: absolute;
-    top: 90%;
-    left: 55%;
-    transform: translate(-90%, -90%);
-}
-
-#red {
-    position: absolute;
-    top: 90%;
-    left: 35%;
-    transform: translate(-90%, -90%);
-}
-
-#blue {
-    position: absolute;
-    top: 90%;
-    left: 15%;
-    transform: translate(-90%, -90%);
-} */
 
 .reset {
     margin: 20px;
@@ -157,4 +129,11 @@ img {
 .resetBtn:hover {
     background-color: #0A46E4;
     border-color: #0A46E4;
+}
+
+.divComplete {
+    font-family: Graphik, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
 }
