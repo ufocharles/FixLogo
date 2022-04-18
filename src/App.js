@@ -30,10 +30,7 @@ function drop(ev) {
             if (!black1Exist) {
                 if (ev.target.id === 'blackDiv' || ev.target.id === 'black1Div') {
                     ev.target.appendChild(document.getElementById(data));
-                    dotCoord.push({
-                        dotName: 'black',
-                        dotDiv: ev.target.id
-                    })
+                    fillDotArray(ev.target.id, 'black')
                     completeLogo()
                 }
             } else {
@@ -42,19 +39,13 @@ function drop(ev) {
                 if (currentBlack1.dotDiv === 'black1Div') {
                     if (ev.target.id === 'blackDiv') {
                         ev.target.appendChild(document.getElementById(data));
-                        dotCoord.push({
-                            dotName: 'black',
-                            dotDiv: ev.target.id
-                        })
+                        fillDotArray(ev.target.id, 'black')
                         completeLogo()
                     }
                 } else {
                     if (ev.target.id === 'black1Div') {
                         ev.target.appendChild(document.getElementById(data));
-                        dotCoord.push({
-                            dotName: 'black',
-                            dotDiv: ev.target.id
-                        })
+                        fillDotArray(ev.target.id, 'black')
                         completeLogo()
                     }
                 }
@@ -66,10 +57,7 @@ function drop(ev) {
             if (!blackExist) {
                 if (ev.target.id === 'blackDiv' || ev.target.id === 'black1Div') {
                     ev.target.appendChild(document.getElementById(data));
-                    dotCoord.push({
-                        dotName: 'black1',
-                        dotDiv: ev.target.id
-                    })
+                    fillDotArray(ev.target.id, 'black1')
                     completeLogo()
                 }
             } else {
@@ -78,19 +66,14 @@ function drop(ev) {
                 if (currentBlack.dotDiv === 'black1Div') {
                     if (ev.target.id === 'blackDiv') {
                         ev.target.appendChild(document.getElementById(data));
-                        dotCoord.push({
-                            dotName: 'black',
-                            dotDiv: ev.target.id
-                        })
+                        fillDotArray(ev.target.id, 'black1')
                         completeLogo()
                     }
                 } else {
                     if (ev.target.id === 'black1Div') {
                         ev.target.appendChild(document.getElementById(data));
-                        dotCoord.push({
-                            dotName: 'black',
-                            dotDiv: ev.target.id
-                        })
+                        fillDotArray(ev.target.id, 'black1')
+                        completeLogo()
                     }
                 }
             }
@@ -98,35 +81,28 @@ function drop(ev) {
         case 'blue':
             if (ev.target.id === 'blueDiv') {
                 ev.target.appendChild(document.getElementById(data));
-                dotCoord.push({
-                    dotName: 'blue',
-                    dotDiv: ev.target.id
-                })
+                fillDotArray(ev.target.id, 'blue')
                 completeLogo()
             }
             break
         case 'green':
             if (ev.target.id === 'greenDiv') {
                 ev.target.appendChild(document.getElementById(data));
-                dotCoord.push({
-                    dotName: 'green',
-                    dotDiv: ev.target.id
-                })
+                fillDotArray(ev.target.id, 'green')
+                completeLogo()
             }
             break
         case 'red':
             if (ev.target.id === 'redDiv') {
                 ev.target.appendChild(document.getElementById(data));
-                dotCoord.push({
-                    dotName: 'red',
-                    dotDiv: ev.target.id
-                })
+                fillDotArray(ev.target.id, 'red')
                 completeLogo()
             }
             break
         default:
             break;
     }
+    console.log({ dotCoord })
 }
 
 
@@ -148,5 +124,25 @@ function completeLogo() {
         setTimeout(() => {
             confetti.stop()
         }, 5000)
+    }
+}
+
+// push successful drop into array and avoid duplicate
+function fillDotArray(divId, dotName) {
+    const dotExist = dotCoord.find(dot => { return dot.dotName === dotName })
+    if (dotExist) {
+        // delete the obj
+        let newArray = dotCoord.filter(dot => { return dot.dotName !== dotName })
+        // push to the new position
+        newArray.push({
+            dotName: dotName,
+            dotDiv: divId
+        })
+        dotCoord = newArray
+    } else {
+        dotCoord.push({
+            dotName: dotName,
+            dotDiv: divId
+        })
     }
 }
