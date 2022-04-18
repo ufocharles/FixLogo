@@ -29,6 +29,9 @@ Solution to plan 2
 
 Resources
  drag and drop using mouse event from https://www.youtube.com/watch?v=AtLFLSG8YXw
+
  Button style sourced from https://getcssscan.com/css-buttons-examples
+
  confetti was sourced from https://www.youtube.com/watch?v=quSR_ZrVz6Y
+ 
  drag and drop examples from https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
