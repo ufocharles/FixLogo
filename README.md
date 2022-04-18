@@ -6,7 +6,8 @@ Plan 1
 - use the mouse move event to drag the dots anywhere on the screen and record the location it was dropped using the pageX and pageY location of the mouseup event.
 - keep a coordinate location for the right location for each dot 
 - check for approximate coordinates of dropped dot to verify if it matches the supposed location, if not reject that dot.
- Problems
+
+Problems
  - the location of the dot changes for every screen size
  - so storing a supposed location is not practical
 
@@ -15,6 +16,7 @@ Plan 2
 - add divs with absolute position corresponding to each supposed location for each dot.
 - add ondrag and ondragover property to the divs
 - use the div ids to know what dot is dragged onto it and accept or reject the dot.
+
 Problems
 - location is still a problem here also especially when its centered due to use of absolute position for the divs.
 - the black dots should be interchangeable
