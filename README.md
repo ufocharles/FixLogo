@@ -24,7 +24,7 @@ Problems
 
 Solution to plan 2
 - make the page 600px which is the size of the logo, this helped the absolute positioning of the divs on the logo
-- after restricying the black dots to their 2 positions, i still had to keep track of which black has taken what position to allow the other black take the other position.
+- after restricting the black dots to their 2 positions, i still had to keep track of which black has taken what position to allow the other black take the other position.
 - used an array to store successful drop and check if i have all 5 dots dropped at every drop.
 
 Resources
@@ -33,5 +33,5 @@ Resources
  Button style sourced from https://getcssscan.com/css-buttons-examples
 
  confetti was sourced from https://www.youtube.com/watch?v=quSR_ZrVz6Y
- 
+
  drag and drop examples from https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
